@@ -8,8 +8,18 @@ const gameboard = (() => {
     c:1, c:2, c:3
     }];
 
+
+//function creates gameboard
     const displayboard = () => {
-        
+        let gameboard = document.querySelector('gameboard');
+        board.forEach((Object, index) => {
+           const cell = document.createElement('div');
+           cell.setAttribute('id',`${index}`);
+           gameboard.appendChild(cell); 
+        })
     }
 
-}
+    return {
+        board, displayboard,
+    };
+})();
