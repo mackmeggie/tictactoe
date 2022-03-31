@@ -36,7 +36,16 @@ const player = (name, marker) => {
 
     const playMarker = () => {
         let cell = document.querySelectorAll('.cell');
-        
+        if(cell.textcontent === "X" || cell.textcontent === "O") {
+            alert("This spot is taken, choose another spot.")
+        } else {
+        cell.addEventListener('click', () => {
+            cell.textcontent = "X"
+        })}
+    }
+
+    return {
+        name, marker, playMarker,
     }
 }
 
