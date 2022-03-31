@@ -2,20 +2,24 @@
 //Gameboard stored as array inside factory function
 const gameboard = (() => {
 
-    const board = [{
-    a:1, a:2, a:3,
-    b:1, b:2, b:3,
-    c:1, c:2, c:3
-    }];
+    const board = [
+    {a:1}, {a:2}, {a:3},
+    {b:1}, {b:2}, {b:3},
+    {c:1}, {c:2}, {c:3}
+    ];
 
 
 //function creates gameboard
     const displayboard = () => {
-        let gameboard = document.querySelector('gameboard');
-        board.forEach((Object, index) => {
-           const cell = document.createElement('div');
+        
+        board.forEach((object, index) => {
+        let gamegrid = document.querySelector('.gameboard');
+           let cell = document.createElement('div');
+           cell.classList.add('gamecell');
            cell.setAttribute('id',`${index}`);
-           gameboard.appendChild(cell); 
+           gamegrid.appendChild(cell);
+           gamegrid.style.gridTemplateRows=`repeat(3, 1fr)`
+           gamegrid.style.gridTemplateColumns=`repeat(3, 1fr)` 
         })
     }
 
@@ -23,3 +27,5 @@ const gameboard = (() => {
         board, displayboard,
     };
 })();
+
+gameboard.displayboard();

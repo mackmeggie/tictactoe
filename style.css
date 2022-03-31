@@ -1,0 +1,22 @@
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.gameboard {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 600px;
+
+}
+.gamecell {
+    display: grid;
+    
+
+    border-style: solid;
+    border-color: aqua;
+    padding: 100px
+}
+
