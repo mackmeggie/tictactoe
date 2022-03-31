@@ -28,4 +28,16 @@ const gameboard = (() => {
     };
 })();
 
+
+//Player factory function
+const player = (name, marker) => {
+    const name = () => name;
+    const marker = () => marker;
+
+    const playMarker = () => {
+        let cell = document.querySelectorAll('.cell');
+        
+    }
+}
+
 gameboard.displayboard();
