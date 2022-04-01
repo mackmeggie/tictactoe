@@ -22,7 +22,7 @@ const gameboard = (() => {
            gamegrid.style.gridTemplateRows=`repeat(3, 1fr)`
            gamegrid.style.gridTemplateColumns=`repeat(3, 1fr)` 
            cell.addEventListener('click', () => {
-               cell.textContent=player.marker;
+               cell.textContent="O";
             });
         })
     }
@@ -38,16 +38,17 @@ const gameboard = (() => {
 const player = (name, marker) => {
     name = prompt("Please enter your name");
     marker = prompt("Please select a marker");
-    
 
-    //Why doesn't this work???
-    
-    
-    
-    
+    const playMarker = marker => {
+        if (textContent == '') {
+            textContent = marker;
+        } if (textContent != marker) {
+            textContent = marker;
+        } 
+    }
 
     return {
-        name, marker, 
+        name, marker, playMarker, 
     }
 }
 
@@ -56,14 +57,15 @@ const gameflow = () => {
     
 }
 
-
+const player1 = player();
+const player2 = player()
 
 
 
 
 gameboard.displayboard();
 
-player();
+
 
 
 
