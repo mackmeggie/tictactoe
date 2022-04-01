@@ -1,5 +1,5 @@
 
-//Gameboard stored as array inside factory function
+//Gameboard stored as array inside module
 const gameboard = (() => {
 
     const board = [
@@ -17,9 +17,13 @@ const gameboard = (() => {
            let cell = document.createElement('div');
            cell.classList.add('gamecell');
            cell.setAttribute('id',`${index}`);
+           cell.textContent=""
            gamegrid.appendChild(cell);
            gamegrid.style.gridTemplateRows=`repeat(3, 1fr)`
            gamegrid.style.gridTemplateColumns=`repeat(3, 1fr)` 
+           cell.addEventListener('click', () => {
+               cell.textContent=player.marker;
+            });
         })
     }
 
@@ -29,24 +33,37 @@ const gameboard = (() => {
 })();
 
 
+
 //Player factory function
 const player = (name, marker) => {
-    const name = () => name;
-    const marker = () => marker;
+    name = prompt("Please enter your name");
+    marker = prompt("Please select a marker");
+    
 
-    const playMarker = () => {
-        let cell = document.querySelectorAll('.cell');
-        if(cell.textcontent === "X" || cell.textcontent === "O") {
-            alert("This spot is taken, choose another spot.")
-        } else {
-        cell.addEventListener('click', () => {
-            cell.textcontent = "X"
-        })}
-    }
+    //Why doesn't this work???
+    
+    
+    
+    
 
     return {
-        name, marker, playMarker,
+        name, marker, 
     }
 }
 
+const gameflow = () => {
+
+    
+}
+
+
+
+
+
+
 gameboard.displayboard();
+
+player();
+
+
+
