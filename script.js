@@ -21,8 +21,8 @@ const gameboard = (() => {
             gamegrid.appendChild(cell);
             gamegrid.style.gridTemplateRows=`repeat(3, 1fr)`
             gamegrid.style.gridTemplateColumns=`repeat(3, 1fr)` 
-            cell.addEventListener('click', playO(`${index}`));
-            cell.addEventListener('click', playX(`${index}`))
+            cell.addEventListener('click', playO);
+            cell.addEventListener('click', playX)
         })
     }
 
@@ -30,8 +30,8 @@ const gameboard = (() => {
         console.log('Helooooo, is anyting working???')
     }
     
-    const playX = (indexy) => {
-        const cell = document.getElementById(`${indexy}`);
+    const playX = (event) => {
+        const cell = event.target;
         if(cell.textContent === "*") {
             cell.textContent = "X"
         } 
@@ -41,11 +41,10 @@ const gameboard = (() => {
     }
 
 
-    const playO = (indexy) => {
-        const cell = document.getElementById(`${indexy}`)
+    const playO = (event) => {
+        const cell = event.target
         if(cell.textContent === "*") {
             cell.textContent = "O"
-            console.log("???")
         }
         if(cell.textContent === "O" || cell.textContent === "X") {
             alert("Spot already selected.")
@@ -55,7 +54,7 @@ const gameboard = (() => {
     
 
     return {
-        board, displayboard, playO, playX, test
+        board, displayboard, playX, playO, test
     };
 })();
 
