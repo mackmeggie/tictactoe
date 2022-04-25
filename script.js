@@ -10,7 +10,7 @@ const gameboard = (() => {
     
 
     //display gameboard function
-    const displayboard = () => {
+    const displayBoard = () => {
         
         board.forEach((item, index) => {
             let gamegrid = document.querySelector('.gameboard');
@@ -27,7 +27,7 @@ const gameboard = (() => {
     
 
     return {
-        board, displayboard, 
+        board, displayBoard, 
     };
 })();
 
@@ -43,6 +43,7 @@ const player = (name, marker) => {
 //Gameflow module
 const gameplay = (() => {
 
+    //players
     const player1 = player('player1', 'O')
     const player2 = player('player2', 'X')
 
@@ -56,6 +57,8 @@ const gameplay = (() => {
         }
     }
     
+
+    //function to place x and o's
     const playMarker = (event) => {
         const cell = event.target
         if(cell.textContent === "*") {
@@ -65,20 +68,23 @@ const gameplay = (() => {
             alert("Spot already selected.")
         } }
 
-    const applyevent = () => {
+    const applyEvent = () => {
         gamegrid = document.querySelector('.gameboard');
         gamegrid.addEventListener('click', playMarker);
-} 
+    } 
+
+    //function for game play through
+    const playGame
 
 
     return {
-        playMarker, applyevent, switchPlayer, 
+        playMarker, applyEvent, switchPlayer, 
     };
 
 
 })();
 
-gameboard.displayboard();
-gameplay.applyevent();
+gameboard.displayBoard();
+gameplay.applyEvent();
 
 
