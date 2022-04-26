@@ -7,8 +7,6 @@ const gameboard = (() => {
         "*", "*", "*",
     ];
 
-    
-
     //display gameboard function
     const displayBoard = () => {
         
@@ -24,10 +22,16 @@ const gameboard = (() => {
         })
     }
 
+    //win conditions
+    const winConditions = [
+        [0,1,2],[3,4,5],[6,7,8], 
+        [0,3,6],[1,4,7],[2,5,8], 
+        [0,4,8],[2,4,6]          
+    ];
     
 
     return {
-        board, displayBoard, 
+        board, displayBoard, winConditions,
     };
 })();
 
@@ -72,9 +76,6 @@ const gameplay = (() => {
         gamegrid = document.querySelector('.gameboard');
         gamegrid.addEventListener('click', playMarker);
     } 
-
-    //function for game play through
-    const playGame
 
 
     return {
